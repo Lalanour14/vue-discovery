@@ -1,15 +1,14 @@
 <script lang="ts" setup>
-const { data: dog } = await useFetch('/api/dog');
+import { Dog } from 'entities';
 
-// const { data, error } = await useAsyncData('dog', () => myGetFunction('dog'));
+const {data} =  useFetch<Dog[]>('http://localhost:8000/api/dog');
+
 
 
 </script>
 
 <template>
-  <div>
-  
-  </div>
+  <DogItem v-for="item of data" :dog="item"/>
 </template>
 
 <style scoped></style>
