@@ -10,7 +10,7 @@ defineProps<{
 
 <template>
   <div>
-    <h3>{{ dog.name }}</h3>
+    <h3><NuxtLink :to="'/dog'+dog._id"></NuxtLink> {{ dog.name }}</h3>
     <p>{{ dog.breed }}</p>
     <p>{{ dog.birthdate }}</p>
   </div>
